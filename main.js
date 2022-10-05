@@ -1,3 +1,4 @@
+let carrito = [];
 
 function ClickBuscar(){
 
@@ -14,10 +15,10 @@ function ClickBuscar(){
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h7 class="card-title">${producto.title}</h7>
+                                <h7 class="card-title title-elipsis">${producto.title}</h7>
                                 <p class="card-text"></p>
                                 <p class="card-text"><small class="text-success" class="text-muted">$ ${(producto.price).toLocaleString('en-US')}</small></p>
-                                <button class="btn btn-success" type="button" style="float:right; margin-bottom: 10px; text-align: end;">Agregar</button>
+                                <button id="agregar${producto.id}" class="btn btn-success" onclick = "mostrarProductId(this);" type="button" style="float:right; margin-bottom: 10px; text-align: end;">Agregar</button>
                             </div>
                         </div>
                      </div>
@@ -26,7 +27,19 @@ function ClickBuscar(){
                    `
 
        document.getElementById("listar").innerHTML += row;
-
+        
+  
         });
     })
+
 }
+
+function mostrarProductId() {
+    console.log();
+}
+
+
+
+
+
+
