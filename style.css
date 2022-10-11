@@ -8,3 +8,9 @@
   .title-elipsis:hover{
     display: block;
   }
+
+  .h1-carrito{
+    text-align: center;
+    padding-top: 50px;
+  }
+
