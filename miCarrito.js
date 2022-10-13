@@ -1,10 +1,10 @@
+var total = 0
+
 document.addEventListener("DOMContentLoaded", () => {
     
     let localCarrito = localStorage.getItem("carrito");
 
     let datosCarrito = JSON.parse(localCarrito);
-
-    console.log(datosCarrito);
 
     datosCarrito.forEach(producto => {
      let row = `
@@ -23,7 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 </td> 
                 <td>
                 </td>
-            </tr>`    
+            </tr>`   
+            
+            total = producto.precio + total;
+
+            document.getElementById('valorTotalProduct').value = total.toLocaleString("en-US", {style: "currency",currency: "USD" });
 
        document.getElementById("listar").innerHTML += row;
     });
