@@ -12,6 +12,7 @@ function ClickBuscar(){
             titulo: producto.title,
             precio: producto.price,
             id: producto.id,
+            cantidad: 1,
         };
 
         productos.push(datosProducto);
@@ -27,6 +28,7 @@ function ClickBuscar(){
                             <div class="card-body">
                                 <h7 class="card-title title-elipsis">${producto.title}</h7>
                                 <p class="card-text"><small class="text-success" class="text-muted">$ ${(producto.price).toLocaleString('en-US')}</small></p>
+                                <input type="number" id="cantidad_${producto.id}" min="0" max="15" value="${datosProducto.cantidad}" style="width: 40px;">
                                 <button class="btn btn-success" onclick ="Agregar('${producto.id}');" type="button" style="float:right; margin-bottom: 10px; text-align: end;">Agregar</button>
                             </div>
                         </div>
@@ -47,6 +49,8 @@ function Agregar(id) {
    productos.forEach(p => {
 
     if(p.id == id){
+
+        p.cantidad = document.getElementById("cantidad_"+p.id).value;   
         
         AgregarProductoLocalStorge(p);
     }
