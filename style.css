@@ -35,5 +35,14 @@
     font-weight: 500;
   }
 
+  .boton_CleanCarrito{
+    margin-top: 35px;
+  }
+
+  button span{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
 
 
